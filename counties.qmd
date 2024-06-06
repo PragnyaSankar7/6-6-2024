@@ -1,0 +1,23 @@
+---
+title: "US County Populations vs. Economic Connectedness"
+author: "Pragnyasri Sankar"
+format: html
+editor: visual
+---
+
+```{r}
+#| echo: false
+#| message: false
+library(tidyverse)
+library(primer.data)
+```
+
+
+```{r}
+#| label: main-plot
+connectedness |>
+  ggplot(aes(x = population, y = connectedness)) +
+  scale_x_log10(labels = scales::comma_format()) + 
+  geom_point()
+```
+
